@@ -1,0 +1,143 @@
+.header {
+    background-color: blue;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+body {
+    margin: 0
+}
+
+.top-grid-container {
+    display: grid;
+    grid-template-columns: 50% 5% 45%;
+}
+
+.inputt {
+    display: inline-block;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.show {
+    grid-column-start: 3;
+    grid-column-end: 4; 
+}
+
+table {
+    table-layout: fixed;
+    position: inherit;
+    text-overflow: ellipsis;
+    width: 110%;
+}
+
+td { height: 20px; }
+
+button {
+    padding: 5px 10px
+}
+
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, td, .header {
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+
+table,td {
+    border: thin solid black;
+    border-collapse: collapse;
+    padding: 2%;
+    font-size: 82%;
+}
+
+#page {
+    width: 470px;
+    height: 592px;
+    box-shadow: 2px 2px 12px 2px rgb(224, 223, 223);
+    padding: 90px 20px 110px 70px;
+    
+}
+
+.celll {
+    word-wrap: break-word;
+}
+
+.fix {
+    width: 99px;
+}
+
+.page-grid-container {
+    display: grid;
+    grid-template-columns: 100px 100px 90px 110px;
+    grid-template-rows: 13% 5% 5% 5% 13% 30% 29%;
+}
+
+.logo {
+    margin: auto auto;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.dept {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.acad {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.assgn {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.sub {
+    text-align-last: left;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.sem {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.tablo {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
+.info {
+    text-align: initial;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
+
+ul {
+    list-style-type: none;
+}
