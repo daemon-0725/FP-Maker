@@ -58,10 +58,10 @@ export class InputtComponent implements OnInit {
         let paper = document.getElementById("page"); //DOM ELEMENT
         html2canvas(paper)
                    .then(canvas => { //Promise
-                        const contentDataURL = canvas.toDataURL('image/png')  //URL for jsPDF
                         let pdf = new jspdf('p', 'pt', 'a4'); //points used idk why i tried for better resolution   
-                        var position = 0;  
-                        pdf.addImage(contentDataURL, 'JPEG', 0, position, paper.offsetWidth, paper.offsetHeight);
+                        var position = 0;
+                        //direct canvas instead of data URL reduces filesize i.e. filesize independent of vertical resolution
+                        pdf.addImage(canvas, 'JPEG', 0, position, paper.offsetWidth, paper.offsetHeight);
                         pdf.save(this.sub+"_"+this.assgn+'_Fp.pdf'); 
                     })
                     .catch(error => {
@@ -70,13 +70,6 @@ export class InputtComponent implements OnInit {
     }
 
     public getPNG() {
-        /*domtoimage.toJpeg(document.getElementById('page'), {quality : 1.00})
-                  .then(dataURL => {
-                      let link = document.createElement('a');
-                      link.download = this.sub+"_"+this.assgn+'_Fp.jpeg';
-                      link.href = dataURL;
-                      link.click();
-                  });*/
         html2canvas(document.getElementById('page'))
                    .then(canvas => {
                         let dataURL = canvas.toDataURL();

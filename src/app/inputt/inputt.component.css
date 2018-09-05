@@ -94,6 +94,7 @@ table,td {
 
 .logo {
     margin: auto auto;
+    direction: rtl;
 
     grid-column-start: 1;
     grid-column-end: 2;
@@ -124,6 +125,7 @@ table,td {
 
 .sub {
     text-align-last: left;
+    margin: auto 0;
 
     grid-column-start: 1;
     grid-column-end: 4;
@@ -132,6 +134,8 @@ table,td {
 }
 
 .sem {
+    margin: auto 0;
+
     grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: 4;
