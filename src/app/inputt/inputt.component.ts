@@ -16,6 +16,10 @@ export class InputtComponent implements OnInit {
     sub : string;
     assgn : string;
     noOfQues : number;
+    name : string;
+    batch : string;
+    roll : string;
+
     cols = new Array<Mapp>();
 
     ngOnInit() {
