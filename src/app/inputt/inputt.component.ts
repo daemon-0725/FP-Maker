@@ -19,6 +19,10 @@ export class InputtComponent implements OnInit {
     cols = new Array<Mapp>();
 
     ngOnInit() {
+
+        if(screen.width < 569)
+            document.getElementById("scroller").style.width = screen.width + "px";
+        
         let date = new Date();
         let yr = date.getFullYear();
 
@@ -47,22 +51,13 @@ export class InputtComponent implements OnInit {
     }
 
     public getPDF() {  
-
-        html2canvas(document.getElementById("page"))
-                   .then(canvas => {
-
-                        const dataURL = canvas.toDataURL("image/png");
-
-                        //Few necessary setting options  
-                        var imgWidth = 208;   
-                        var pageHeight = 295;    
-                        var imgHeight = canvas.height * imgWidth / canvas.width;  
-                        var heightLeft = imgHeight; 
-                    
-                        const contentDataURL = canvas.toDataURL('image/png')  
-                        let pdf = new jspdf('p', 'mm', 'a4');   
+        let paper = document.getElementById("page"); //DOM ELEMENT
+        html2canvas(paper)
+                   .then(canvas => { //Promise
+                        const contentDataURL = canvas.toDataURL('image/png')  //URL for jsPDF
+                        let pdf = new jspdf('p', 'pt', 'a4'); //points used idk why i tried for better resolution   
                         var position = 0;  
-                        pdf.addImage(contentDataURL, 'JPEG', 0, position, imgWidth, imgHeight);  
+                        pdf.addImage(contentDataURL, 'JPEG', 0, position, paper.offsetWidth, paper.offsetHeight);
                         pdf.save(this.sub+"_"+this.assgn+'_Fp.pdf'); 
                     })
                     .catch(error => {

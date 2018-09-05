@@ -1,4 +1,4 @@
-<div class="top-grid-container">
+<div >
 <div class="inputt">
    <div class="header">
       <h1>FP Maker</h1>
@@ -85,16 +85,9 @@
     </mat-form-field>
     </mat-card>
     <br>
-    <mat-card class="center">
-    <button mat-raised-button color="primary" (click)="getPDF()">
-        <i class="material-icons">picture_as_pdf</i> PDF
-    </button>
-    <button mat-raised-button color="accent" (click)="getPNG()">
-        <i class="material-icons">image</i> PNG [Phones]
-    </button>
-  </mat-card>
 </div>
 <div class="show">
+<span id="scroller">
 <div id="toBeConverted">
 <div id="page" class="page-grid-container" >
   <div class="logo" >
@@ -154,5 +147,15 @@
 </div>
 </div>
 </div>
+</span>
 </div>
 </div>
+<mat-card id="actionz">
+    <button mat-raised-button color="primary" (click)="getPDF()">
+        <i class="material-icons">picture_as_pdf</i> PDF
+    </button>
+    <br><br>
+    <button mat-raised-button color="accent" (click)="getPNG()">
+        <i class="material-icons">image</i> PNG
+    </button>
+  </mat-card>
