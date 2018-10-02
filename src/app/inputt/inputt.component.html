@@ -1,160 +1,162 @@
-<div >
-<div class="inputt">
-   <div class="header">
-      <h1>FP Maker</h1>
-  </div>
-  <mat-card>
-  <mat-card-header style="color:blue">
-    <mat-card-title>
-      <i class="material-icons">school</i>  COMMON DETAILS
-    </mat-card-title>
-  </mat-card-header>
-  <mat-form-field>
-  <mat-select [(value)]="dept" placeholder="Department">
-    <mat-option value="Computer">Computer</mat-option>
-  </mat-select>
-  <mat-hint>Select Department</mat-hint>
-</mat-form-field>
-<mat-form-field>
-    <mat-select [(value)]="sem" placeholder="Semester">
-      <mat-option *ngIf="!isEvenSem" value="I">I</mat-option>
-      <mat-option *ngIf="isEvenSem" value="II">II</mat-option>
-      <mat-option *ngIf="!isEvenSem" value="III">III</mat-option>
-      <mat-option *ngIf="isEvenSem" value="IV">IV</mat-option>
-      <mat-option *ngIf="!isEvenSem" value="V">V</mat-option>
-      <mat-option *ngIf="isEvenSem" value="VI">VI</mat-option>
-      <mat-option *ngIf="!isEvenSem" value="VII">VII</mat-option>
-      <mat-option *ngIf="isEvenSem" value="VIII">VIII</mat-option>
-    </mat-select>
-    <mat-hint>Select Semester</mat-hint>
-  </mat-form-field>
-<mat-form-field>
-<input matInput  type="text" [(ngModel)] ="sub" placeholder="Subject">
-<mat-hint>Enter Subject</mat-hint>
-</mat-form-field>
-<br>
-</mat-card>
-<br>
-<mat-card>
-  <mat-card-header style="color:blue">
-    <mat-card-title>
-        <i class="material-icons">assignment</i>  ASSIGNMENT DETAILS
-    </mat-card-title>
-  </mat-card-header>
-<mat-form-field>
-<input matInput  type="number" [(ngModel)] ="assgn" placeholder="Assignment No. " >
-<mat-hint>Enter Assignment Number</mat-hint>
-</mat-form-field>
-<mat-form-field>
-<input matInput  type="number" [(ngModel)] ="noOfQues"  (keyup)="makemap()" placeholder="No of Questions">
-<mat-hint>Only upto 7 max</mat-hint>
-</mat-form-field>
 <div>
-  <ul>
-    <li *ngFor="let col of cols">
+  <div class="inputt">
+    <div class="header">
+      <h1>FP Maker</h1>
+    </div>
+    <mat-card>
+      <mat-card-header style="color:#3F51B5">
+        <mat-card-title>
+          <i class="material-icons">school</i> COMMON DETAILS
+        </mat-card-title>
+      </mat-card-header>
       <mat-form-field>
-        <input matInput [(ngModel)] = "col.ques"  type="string" placeholder="Question No">
+        <mat-select [(value)]="dept" placeholder="Department">
+          <mat-option value="Computer">Computer</mat-option>
+        </mat-select>
+        <mat-hint>Select Department</mat-hint>
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)] = "col.cos"  type="string" placeholder="CO">
+        <mat-select [(value)]="sem" placeholder="Semester">
+          <mat-option *ngIf="!isEvenSem" value="I">I</mat-option>
+          <mat-option *ngIf="isEvenSem" value="II">II</mat-option>
+          <mat-option *ngIf="!isEvenSem" value="III">III</mat-option>
+          <mat-option *ngIf="isEvenSem" value="IV">IV</mat-option>
+          <mat-option *ngIf="!isEvenSem" value="V">V</mat-option>
+          <mat-option *ngIf="isEvenSem" value="VI">VI</mat-option>
+          <mat-option *ngIf="!isEvenSem" value="VII">VII</mat-option>
+          <mat-option *ngIf="isEvenSem" value="VIII">VIII</mat-option>
+        </mat-select>
+        <mat-hint>Select Semester</mat-hint>
       </mat-form-field>
-      <mat-form-field>
-        <input matInput [(ngModel)] = "col.marks"  type="string" placeholder="Marks">
-      </mat-form-field>
-    </li>
-  </ul>
-</div>
-</mat-card>
-<br>
-<mat-card>
-        <mat-card-header style="color:blue">
-          <mat-card-title>
-              <i class="material-icons">perm_identity</i> INDIVIDUAL DETAILS
-          </mat-card-title></mat-card-header>
-      <mat-form-field>
-    <input matInput type="text" [(ngModel)] ="name" placeholder="Enter Name" >
-    <mat-hint>Leave Blank For Templates</mat-hint>
-    </mat-form-field>
-    <mat-form-field>
-    <input matInput  type="text" [(ngModel)] ="batch" placeholder="Enter Batch" >
-    </mat-form-field>
-    <mat-form-field>
-    <input matInput  type="text" [(ngModel)] ="roll" placeholder="Enter Roll No" >
-    <mat-hint>Leave Blank For Templates</mat-hint>
-    </mat-form-field>
+      <br>
     </mat-card>
     <br>
-</div>
-<div class="show">
-<span id="scroller">
-<div id="toBeConverted">
-<div id="page" class="page-grid-container" >
-  <div class="logo" >
-    <img src="assets/hero_resized.png" title="DYPATIL LOGO" width="110px"/>
+    <mat-card>
+      <mat-card-header style="color:#3F51B5">
+        <mat-card-title>
+          <i class="material-icons">assignment</i> ASSIGNMENT DETAILS
+        </mat-card-title>
+      </mat-card-header>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="sub" placeholder="Subject">
+        <mat-hint>Enter Subject</mat-hint>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="number" [(ngModel)]="assgn" placeholder="Assignment No. ">
+        <mat-hint>Enter Assignment Number</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" [(ngModel)]="noOfQues" (keyup)="makemap()" placeholder="No of Questions">
+        <mat-hint>Only upto 7 max</mat-hint>
+      </mat-form-field>
+      <div>
+        <ul>
+          <li *ngFor="let col of cols">
+            <mat-form-field>
+              <input matInput [(ngModel)]="col.ques" type="string" placeholder="Question No">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput [(ngModel)]="col.cos" type="string" placeholder="CO">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput [(ngModel)]="col.marks" type="string" placeholder="Marks">
+            </mat-form-field>
+          </li>
+        </ul>
+      </div>
+    </mat-card>
+    <br>
+    <mat-card>
+      <mat-card-header style="color:#3F51B5">
+        <mat-card-title>
+          <i class="material-icons">perm_identity</i> INDIVIDUAL DETAILS
+        </mat-card-title>
+      </mat-card-header>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="name" placeholder="Enter Name">
+        <mat-hint>Leave Blank For Templates</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="batch" placeholder="Enter Batch">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="roll" placeholder="Enter Roll No">
+        <mat-hint>Leave Blank For Templates</mat-hint>
+      </mat-form-field>
+    </mat-card>
+    <br>
   </div>
-    <div class="dept center">
-        <h3 >Department of Computer Engineering</h3>
-    </div>
-    <div class="acad">
-        <h3 class="center">Academic Year: {{ year }}</h3>
-    </div>
-    <div class="assgn ">
-      <h4>ASSIGNMENT NO.: {{ assgn }}</h4>
-    </div>
-    <div class="sub">
-      <h4>Subject: {{ sub }} </h4>
-    </div>
-    <div class="sem">
-      <h4 > Semester: {{ sem }} </h4>
-    </div>
+  <div class="show">
+    <span id="scroller">
+      <div id="toBeConverted">
+        <div id="page" class="page-grid-container">
+          <div class="logo">
+            <img src="assets/Rait_logo.png" title="DYPATIL LOGO" width="130px" />
+          </div>
+          <div class="dept center">
+            <h3>Department of Computer Engineering</h3>
+          </div>
+          <div class="acad">
+            <h3 class="center">Academic Year: {{ year }}</h3>
+          </div>
+          <div class="assgn ">
+            <h4>ASSIGNMENT NO.: {{ assgn }}</h4>
+          </div>
+          <div class="sub">
+            <h4>Subject: {{ sub }} </h4>
+          </div>
+          <div class="sem">
+            <h4> Semester: {{ sem }} </h4>
+          </div>
 
-<div class="tablo">
-    <table class="center" >
-        <tr>
-          <td class= "fix celll">Course Outcome</td>
-          <td class="celll" *ngFor = "let col of cols">
-            CO{{ col.cos }}
-          </td>
-          <td ></td>
-        </tr>
-        <tr>
-          <td class= "fix celll">Question No.</td>
-          <td class="celll" *ngFor = "let col of cols">
-            {{ col.ques }}
-          </td>
-          <td>Total</td>
-        </tr>
-        <tr>
-          <td class= "fix celll" >Marks Alloted</td>
-          <td class="celll" *ngFor = "let col of cols">
-            {{ col.marks }}
-          </td>
-          <td >30</td>
-        </tr>
-        <tr>
-          <td class= "fix celll">Marks Obtained</td>
-          <td class="celll" *ngFor = "let col of cols"></td>
-          <td ></td>
-        </tr>
-      </table>
-</div>
-<div class="info">
-      <h4>Name: {{ name }} </h4>
-      <h4>Batch: {{ batch }} </h4>
-      <h4>Roll No: {{ roll }} </h4>
-      <h4>Signature of Faculty: </h4>
-</div>
-</div>
-</div>
-</span>
-</div>
+          <div class="tablo">
+            <table class="center">
+              <tr>
+                <td class="fix celll">Course Outcome</td>
+                <td class="celll" *ngFor="let col of cols">
+                  CO{{ col.cos }}
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="fix celll">Question No.</td>
+                <td class="celll" *ngFor="let col of cols">
+                  {{ col.ques }}
+                </td>
+                <td>Total</td>
+              </tr>
+              <tr>
+                <td class="fix celll">Marks Obtained</td>
+                <td class="celll" *ngFor="let col of cols"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="fix celll">Marks Alloted</td>
+                <td class="celll" *ngFor="let col of cols">
+                  {{ col.marks }}
+                </td>
+                <td>30</td>
+              </tr>
+            </table>
+          </div>
+          <div class="info">
+            <h4>Name: {{ name }} </h4>
+            <h4>Batch: {{ batch }} </h4>
+            <h4>Roll No: {{ roll }} </h4>
+            <h4>Signature of Faculty: </h4>
+          </div>
+        </div>
+      </div>
+    </span>
+  </div>
 </div>
 <mat-card id="actionz">
-    <button mat-raised-button color="primary" (click)="getPDF()">
-        <i class="material-icons">picture_as_pdf</i> PDF
-    </button>
-    <br><br>
-    <button mat-raised-button color="accent" (click)="getPNG()">
-        <i class="material-icons">image</i> PNG
-    </button>
-  </mat-card>
+  <button mat-raised-button color="primary" (click)="getPDF()">
+    <i class="material-icons">picture_as_pdf</i> PDF
+  </button>
+  <br><br>
+  <button mat-raised-button color="accent" (click)="getPNG()">
+    <i class="material-icons">image</i> PNG
+  </button>
+</mat-card>
