@@ -28,6 +28,7 @@
         </mat-select>
         <mat-hint>Select Semester</mat-hint>
       </mat-form-field>
+      <mat-checkbox [(ngModel)]="show_logo"><i>DY Logo</i></mat-checkbox>
       <br>
     </mat-card>
     <br>
@@ -48,7 +49,7 @@
       </mat-form-field>
       <mat-form-field>
         <input matInput type="number" [(ngModel)]="noOfQues" (keyup)="makemap()" placeholder="No of Questions">
-        <mat-hint>Only upto 7 max</mat-hint>
+        <mat-hint>Only upto 6 max</mat-hint>
       </mat-form-field>
       <div>
         <ul>
@@ -79,6 +80,7 @@
       </mat-form-field>
       <mat-form-field>
         <input matInput type="text" [(ngModel)]="batch" placeholder="Enter Batch">
+        <mat-hint>Leave Blank For Templates</mat-hint>
       </mat-form-field>
       <mat-form-field>
         <input matInput type="text" [(ngModel)]="roll" placeholder="Enter Roll No">
@@ -91,7 +93,7 @@
     <span id="scroller">
       <div id="toBeConverted">
         <div id="page" class="page-grid-container">
-          <div class="logo">
+          <div class="logo" *ngIf="show_logo">
             <img src="assets/Rait_logo.png" title="DYPATIL LOGO" width="130px" />
           </div>
           <div class="dept center">

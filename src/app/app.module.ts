@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button'
 import { MatGridListModule } from '@angular/material/grid-list'
+import { MatCheckboxModule } from '@angular/material/checkbox'
 
 import { AppComponent } from './app.component';
 import { InputtComponent } from './inputt/inputt.component';
@@ -28,7 +29,8 @@ import { InputtComponent } from './inputt/inputt.component';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

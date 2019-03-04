@@ -19,6 +19,7 @@ export class InputtComponent implements OnInit {
     name : string;
     batch : string;
     roll : string;
+    show_logo : boolean = true;
 
     cols = new Array<Mapp>();
 
