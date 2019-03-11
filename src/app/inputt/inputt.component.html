@@ -4,7 +4,7 @@
       <h1>FP Maker</h1>
     </div>
     <mat-card>
-      <mat-card-header style="color:#3F51B5">
+      <mat-card-header > <!--*removed style="color:#3F51B5"-->
         <mat-card-title>
           <i class="material-icons">school</i> COMMON DETAILS
         </mat-card-title>
@@ -33,7 +33,7 @@
     </mat-card>
     <br>
     <mat-card>
-      <mat-card-header style="color:#3F51B5">
+      <mat-card-header>
         <mat-card-title>
           <i class="material-icons">assignment</i> ASSIGNMENT DETAILS
         </mat-card-title>
@@ -69,7 +69,7 @@
     </mat-card>
     <br>
     <mat-card>
-      <mat-card-header style="color:#3F51B5">
+      <mat-card-header>
         <mat-card-title>
           <i class="material-icons">perm_identity</i> INDIVIDUAL DETAILS
         </mat-card-title>
@@ -157,8 +157,10 @@
   <button mat-raised-button color="primary" (click)="getPDF()">
     <i class="material-icons">picture_as_pdf</i> PDF
   </button>
-  <br><br>
   <button mat-raised-button color="accent" (click)="getPNG()">
     <i class="material-icons">image</i> PNG
+  </button>
+  <button mat-raised-button color="black" (click)="scrollIt()" style="background-color: white; color: black;">
+    <i class="material-icons">description</i> PAGE
   </button>
 </mat-card>

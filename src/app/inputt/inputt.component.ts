@@ -84,6 +84,10 @@ export class InputtComponent implements OnInit {
             link.click();
         });
     }
+
+    public scrollIt() {
+        document.getElementById('page').scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
 }
 
 class Mapp {
