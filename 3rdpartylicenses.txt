@@ -159,6 +159,10 @@ MIT
 MIT
 MIT
 
+@angular/router@5.2.11
+MIT
+MIT
+
 @angular/material@5.2.0
 MIT
 The MIT License
