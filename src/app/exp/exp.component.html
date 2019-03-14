@@ -1,0 +1,118 @@
+<div>
+    <div class="inputt">
+      <mat-card>
+        <mat-card-header > <!--*removed style="color:#3F51B5"-->
+          <mat-card-title>
+            <i class="material-icons">school</i> COMMON DETAILS
+          </mat-card-title>
+        </mat-card-header>
+        <mat-checkbox [(ngModel)]="show_logo"><i>DY Logo</i></mat-checkbox>
+        <br>
+      </mat-card>
+      <br>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <i class="material-icons">assignment</i> EXPERIMENT DETAILS
+          </mat-card-title>
+        </mat-card-header>
+        <mat-form-field>
+          <input matInput type="number" [(ngModel)]="expr" placeholder="Experiment No. ">
+          <mat-hint>Enter Experiment Number</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="POs" placeholder="Program Outcome">
+            <mat-hint>PO numbers only</mat-hint>
+          </mat-form-field>
+        <br><br>
+        <mat-form-field>
+          <textarea matInput placeholder="Course Outcome" [(ngModel)]="CO_text" rows="4"></textarea>
+          <mat-hint>Enter Course Outcome</mat-hint>
+        </mat-form-field>
+      </mat-card>
+      <br>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <i class="material-icons">perm_identity</i> INDIVIDUAL DETAILS
+          </mat-card-title>
+        </mat-card-header>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="name" placeholder="Enter Name">
+          <mat-hint>Leave Blank For Templates</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="batch" placeholder="Enter Batch">
+          <mat-hint>Leave Blank For Templates</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" [(ngModel)]="roll" placeholder="Enter Roll No">
+          <mat-hint>Leave Blank For Templates</mat-hint>
+        </mat-form-field>
+      </mat-card>
+      <br>
+    </div>
+    <div class="show">
+      <div id="toBeConverted">
+        <div id="page">
+          <div id="logo" *ngIf="show_logo">
+            <img src="assets/Rait_logo.png" title="DYPATIL LOGO" width="130px" />
+          </div>
+          <div id="title">
+            <h2>Experiment No. {{ expr }}</h2>
+          </div>
+          <div id="tablo">
+            <table>
+              <tr id="headings">
+                <td style="width: 47%; text-align: center; font-weight: 600;">
+                  Course Outcome Learned
+                </td>
+                <td style="width: 29%; text-align: center">
+                  <b>Program Outcome Learned</b>
+                </td>
+                <td style="width: 12%">
+                  <b>Grade</b>
+                </td>
+                <td style="width: 12%">
+                  <b>Sign</b>
+                </td>
+              </tr>
+              <tr>
+                <td>{{ CO_text }}</td>
+                <td>
+                  <span *ngIf="POs != '' ">
+                    <span *ngFor = "let po of POs.split(',')">PO{{ po }},
+                    </span>
+                  </span>
+                </td>
+                <td> </td>
+                <td>
+                  
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="info">
+              <h4>Name: {{ name }} </h4>
+              <h4>Batch: {{ batch }} </h4>
+              <h4>Roll No: {{ roll }} </h4>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-card id="actionz" class="tranz op">
+    <button mat-raised-button color="primary" (click)="getPDF()">
+      <i class="material-icons">picture_as_pdf</i> PDF
+    </button>
+    <button mat-raised-button color="accent" (click)="getPNG()">
+      <i class="material-icons">image</i> PNG
+    </button>
+  </mat-card>
+
+  <button id="btn-dl" mat-fab color="accent" (click)="toggler()">
+      <i class="material-icons trans">{{ btn }}</i>
+  </button>
+  <button id="btn-view" mat-fab color="accent" (click)="scrollIt()" style="background-color: white; color: black;">
+      <i class="material-icons">visibility</i>
+  </button>

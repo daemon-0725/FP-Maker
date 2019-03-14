@@ -20,13 +20,11 @@ export class InputtComponent implements OnInit {
     batch : string;
     roll : string;
     show_logo : boolean = true;
+    btn : string = "get_app";
 
     cols = new Array<Mapp>();
 
     ngOnInit() {
-
-        if(screen.width < 569)
-            document.getElementById("scroller").style.width = screen.width + "px";
         
         let date = new Date();
         let yr = date.getFullYear();
@@ -65,6 +63,9 @@ export class InputtComponent implements OnInit {
             var position = 0;
             //direct canvas instead of data URL reduces filesize i.e. filesize independent of vertical resolution
             pdf.addImage(canvas, 'JPEG', 0, position, paper.offsetWidth, paper.offsetHeight);
+            if (paper.innerHTML.includes("Course Outcome Learned"))
+            pdf.save('Exp_Fp.pdf'); 
+            else
             pdf.save(this.sub+"_"+this.assgn+'_Fp.pdf'); 
         })
         .catch(error => {
@@ -79,6 +80,10 @@ export class InputtComponent implements OnInit {
         .then(canvas => {
             let dataURL = canvas.toDataURL();
             var link = document.createElement('a');
+            
+            if (document.getElementById('page').innerHTML.includes("Course Outcome Learned"))
+            link.download = 'Exp_Fp.png';
+            else
             link.download = this.sub+"_"+this.assgn+'_Fp.png';
             link.href = dataURL;
             link.click();
@@ -88,6 +93,14 @@ export class InputtComponent implements OnInit {
     public scrollIt() {
         document.getElementById('page').scrollIntoView({behavior: 'smooth', block: 'start'});
     }
+
+    toggler() {
+        document.getElementById('actionz').classList.toggle('op');
+        if (this.btn === 'get_app')
+          this.btn = "close";
+        else
+          this.btn = "get_app";
+      }
 }
 
 class Mapp {

@@ -1,8 +1,5 @@
 <div>
   <div class="inputt">
-    <div class="header">
-      <h1>FP Maker</h1>
-    </div>
     <mat-card>
       <mat-card-header > <!--*removed style="color:#3F51B5"-->
         <mat-card-title>
@@ -58,7 +55,7 @@
               <input matInput [(ngModel)]="col.ques" type="string" placeholder="Question No">
             </mat-form-field>
             <mat-form-field>
-              <input matInput [(ngModel)]="col.cos" type="string" placeholder="CO">
+              <input matInput [(ngModel)]="col.cos" type="string" placeholder="CO Number">
             </mat-form-field>
             <mat-form-field>
               <input matInput [(ngModel)]="col.marks" type="string" placeholder="Marks">
@@ -153,14 +150,18 @@
     </span>
   </div>
 </div>
-<mat-card id="actionz">
-  <button mat-raised-button color="primary" (click)="getPDF()">
-    <i class="material-icons">picture_as_pdf</i> PDF
+<mat-card id="actionz" class="tranz op">
+    <button mat-raised-button color="primary" (click)="getPDF()">
+      <i class="material-icons">picture_as_pdf</i> PDF
+    </button>
+    <button mat-raised-button color="accent" (click)="getPNG()">
+      <i class="material-icons">image</i> PNG
+    </button>
+  </mat-card>
+
+  <button id="btn-dl" mat-fab color="accent" (click)="toggler()">
+      <i class="material-icons trans">{{ btn }}</i>
   </button>
-  <button mat-raised-button color="accent" (click)="getPNG()">
-    <i class="material-icons">image</i> PNG
+  <button id="btn-view" mat-fab color="accent" (click)="scrollIt()" style="background-color: white; color: black;">
+      <i class="material-icons">visibility</i>
   </button>
-  <button mat-raised-button color="black" (click)="scrollIt()" style="background-color: white; color: black;">
-    <i class="material-icons">visibility</i> VIEW
-  </button>
-</mat-card>

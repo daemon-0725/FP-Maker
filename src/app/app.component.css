@@ -1,0 +1,29 @@
+.header {
+    background-color: #C51162;
+    color: #fff;
+    padding: 25px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 560px;
+}
+
+.nav-button {
+    float: left;
+    padding: 5px;
+    display: inline-block;
+    border: #fff solid thin;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+div>a {
+    text-decoration-line: none;
+    color: white;
+}
+
+.selected {
+    color: black;
+    background-color: #4fcc8f;
+    border-color: #4fcc8f;
+}
