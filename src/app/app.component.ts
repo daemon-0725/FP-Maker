@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-root',
@@ -17,9 +16,9 @@ export class AppComponent implements OnInit {
       k[0].classList.add('selected');
   }
 
-  public switchIt() {
+  public switchIt ( num ) {
     var btns = document.getElementsByClassName("nav-button");
-    if(btns[0].classList.contains('selected')){
+    if(num == 1){
       btns[0].classList.remove('selected');
       btns[1].classList.add('selected');
     }

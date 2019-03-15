@@ -24,7 +24,7 @@ const appRoutes: Routes = [
   { path: 'experiment',
     component: ExpComponent },
   { path: '',
-    redirectTo: '/assignment',
+    redirectTo: 'assignment',
     pathMatch: 'full' }
 ]
 

@@ -17,13 +17,11 @@
 }
 
 .inputt {
-    display: inline-block;
     float: left;
     margin: auto 5% 30px 0;
 }
 
 .show {
-    display: inline-block;
     float: left;
 }
 

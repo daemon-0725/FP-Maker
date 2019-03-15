@@ -5,25 +5,26 @@
     border-radius: 8px;
     margin-bottom: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    min-width: 560px;
+    width: auto;
 }
 
 .nav-button {
     float: left;
-    padding: 5px;
-    display: inline-block;
-    border: #fff solid thin;
-    border-radius: 5px;
-    margin: 3px;
+    padding: 3px;
+    margin: 5px;
 }
 
 div>a {
     text-decoration-line: none;
-    color: white;
+    color: #fff;
 }
 
 .selected {
-    color: black;
-    background-color: #4fcc8f;
-    border-color: #4fcc8f;
+    border-block-end: medium solid #5ff5ac;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.selected>a {
+    font-weight: bolder;
 }

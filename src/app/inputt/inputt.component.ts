@@ -25,7 +25,12 @@ export class InputtComponent implements OnInit {
     cols = new Array<Mapp>();
 
     ngOnInit() {
+
+        //Enable scolling based on device width
+        if(screen.width < 569)
+            document.getElementById("scroller").style.width = screen.width + "px";
         
+        //Semester numbers
         let date = new Date();
         let yr = date.getFullYear();
 
@@ -39,6 +44,7 @@ export class InputtComponent implements OnInit {
         }
     }
 
+    //Create Questions data structure
     makemap() {
         let numz;
         for(numz=this.cols.length; numz<this.noOfQues; numz++) {
@@ -53,6 +59,8 @@ export class InputtComponent implements OnInit {
                 this.cols.pop();
     }
 
+
+    //jspdf to make PDF
     public getPDF() {  
         let paper = document.getElementById("page"); //DOM ELEMENT
         html2canvas(paper, {
@@ -73,6 +81,7 @@ export class InputtComponent implements OnInit {
         });  
     }
 
+    //htmlcanvas to make PNG
     public getPNG() {
         html2canvas(document.getElementById('page'), {
             scale : 6
@@ -90,10 +99,12 @@ export class InputtComponent implements OnInit {
         });
     }
 
+    //Scroll to page in devices where page is not initially visible
     public scrollIt() {
         document.getElementById('page').scrollIntoView({behavior: 'smooth', block: 'start'});
     }
 
+    //Download button icon change
     toggler() {
         document.getElementById('actionz').classList.toggle('op');
         if (this.btn === 'get_app')
