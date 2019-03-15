@@ -53,50 +53,52 @@
   <br>
 </div>
 <div class="show">
-  <div id="toBeConverted">
-    <div id="page">
-      <div id="logo" *ngIf="show_logo">
-        <img src="assets/Rait_logo.png" title="DYPATIL LOGO" width="130px" />
-      </div>
-      <div id="title">
-        <h2>Experiment No. {{ expr }}</h2>
-      </div>
-      <div id="tablo">
-        <table>
-          <tr id="headings">
-            <td style="width: 47%; text-align: center; font-weight: 600;">
-              Course Outcome Learned
-            </td>
-            <td style="width: 29%; text-align: center">
-              <b>Program Outcome Learned</b>
-            </td>
-            <td style="width: 12%">
-              <b>Grade</b>
-            </td>
-            <td style="width: 12%">
-              <b>Sign</b>
-            </td>
-          </tr>
-          <tr>
-            <td>{{ CO_text }}</td>
-            <td>
-              <span *ngIf="POs != '' ">
-                <span *ngFor = "let po of POs.split(',')">PO{{ po }},
-                </span>
-              </span>
-            </td>
-            <td> </td>
-            <td>
-              
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div id="info">
-          <h4>Name: {{ name }} </h4>
-          <h4>Batch: {{ batch }} </h4>
-          <h4>Roll No: {{ roll }} </h4>
+  <div id="scroller">
+    <div id="toBeConverted">
+      <div id="page">
+        <div id="logo" *ngIf="show_logo">
+          <img src="assets/Rait_logo.png" title="DYPATIL LOGO" width="130px" />
         </div>
+        <div id="title">
+          <h2>Experiment No. {{ expr }}</h2>
+        </div>
+        <div id="tablo">
+          <table>
+            <tr id="headings">
+              <td style="width: 47%; text-align: center; font-weight: 600;">
+                Course Outcome Learned
+              </td>
+              <td style="width: 29%; text-align: center">
+                <b>Program Outcome Learned</b>
+              </td>
+              <td style="width: 12%">
+                <b>Grade</b>
+              </td>
+              <td style="width: 12%">
+                <b>Sign</b>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ CO_text }}</td>
+              <td>
+                <span *ngIf="POs != '' ">
+                  <span *ngFor = "let po of POs.split(',')">PO{{ po }},
+                  </span>
+                </span>
+              </td>
+              <td> </td>
+              <td>
+                
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="info">
+            <h4>Name: {{ name }} </h4>
+            <h4>Batch: {{ batch }} </h4>
+            <h4>Roll No: {{ roll }} </h4>
+          </div>
+      </div>
     </div>
   </div>
 </div>

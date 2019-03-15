@@ -20,8 +20,13 @@ export class ExpComponent implements OnInit {
 
   ngOnInit() {
 
+    //Enable scolling based on device width
+    if(screen.width < 569)
+    document.getElementById("scroller").style.width = screen.width + "px";
+
   }
 
+  //Download button image toggle
   toggler() {
     document.getElementById('actionz').classList.toggle('op');
     if (this.btn === 'get_app')
